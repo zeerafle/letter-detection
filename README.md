@@ -11,7 +11,7 @@ python backpropagation.py
 
 ## User Interface:
 
-![alt screenshot](https://ibb.co/R0Lz5mf)
+![Alt text](https://ibb.co/R0Lz5mf)
 
 **Load Button**: Training file is loading into view<br/>
 **Save Button**: Saving file is saving to file. (**Attention: Files first character must be target letter**) <br/>
