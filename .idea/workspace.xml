@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49a21d1b-2e6a-42c3-8e09-5becbf6a521e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perceptron.py" beforeDir="false" afterPath="$PROJECT_DIR$/perceptron.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/judul-backpropagation.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,6 +11,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IgnoredFileRootStore">
@@ -90,42 +96,50 @@
       <option name="project" value="LOCAL" />
       <updated>1584720419757</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Kode target, bias dan beban final, tombol clear">
+      <created>1584725683842</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1584725683842</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Ganti GUI dan comment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ganti GUI dan comment" />
+    <MESSAGE value="Kode target, bias dan beban final, tombol clear" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kode target, bias dan beban final, tombol clear" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="26" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584720075388">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="137" y="26" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1584720075388" />
-    <state x="335" y="0" key="CommitChangelistDialog2" timestamp="1584720414170">
+    <state x="335" y="0" key="CommitChangelistDialog2" timestamp="1584725681030">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="335" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1584720414170" />
+    <state x="335" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1584725681030" />
     <state x="463" y="126" key="FileChooserDialogImpl" timestamp="1584720072362">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="126" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1584720072362" />
-    <state width="1345" height="200" key="GridCell.Tab.0.bottom" timestamp="1584725586259">
+    <state width="1345" height="200" key="GridCell.Tab.0.bottom" timestamp="1584726318659">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1345" height="200" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1584725586259" />
-    <state width="1345" height="200" key="GridCell.Tab.0.center" timestamp="1584725586259">
+    <state width="1345" height="200" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1584726318659" />
+    <state width="1345" height="200" key="GridCell.Tab.0.center" timestamp="1584726318659">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1345" height="200" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1584725586259" />
-    <state width="1345" height="200" key="GridCell.Tab.0.left" timestamp="1584725586259">
+    <state width="1345" height="200" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1584726318659" />
+    <state width="1345" height="200" key="GridCell.Tab.0.left" timestamp="1584726318644">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1345" height="200" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1584725586259" />
-    <state width="1345" height="200" key="GridCell.Tab.0.right" timestamp="1584725586259">
+    <state width="1345" height="200" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1584726318644" />
+    <state width="1345" height="200" key="GridCell.Tab.0.right" timestamp="1584726318659">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1345" height="200" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1584725586259" />
+    <state width="1345" height="200" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1584726318659" />
     <state width="1345" height="227" key="GridCell.Tab.1.bottom" timestamp="1584703443049">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -142,10 +156,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="227" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1584703443048" />
-    <state x="275" y="104" key="Vcs.Push.Dialog.v2" timestamp="1584720463673">
+    <state x="275" y="104" key="Vcs.Push.Dialog.v2" timestamp="1584725725733">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="104" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1584720463673" />
+    <state x="275" y="104" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1584725725733" />
     <state x="391" y="195" key="com.intellij.ide.util.TipDialog" timestamp="1584705104458">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
