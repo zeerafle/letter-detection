@@ -11,7 +11,7 @@ python backpropagation.py
 
 ## User Interface:
 
-![Alt text](https://ibb.co/R0Lz5mf)
+![Alt text](https://github.com/adriantoto/jst-huruf-perceptron-backpropagation/blob/master/ss.JPG)
 
 **Load Button**: Training file is loading into view<br/>
 **Save Button**: Saving file is saving to file. (**Attention: Files first character must be target letter**) <br/>
