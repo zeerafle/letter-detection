@@ -1,3 +1,4 @@
+# MASIH SALAH
 # Perceptron Letter Detection
 
 This project detects trained letters with **perceptron** algorithm. Initial values, input data and test folder are prepared for Laurene Fausett, "Fundamentals Of Neural Networks" pp.71-76 character recognition example 2.14.
