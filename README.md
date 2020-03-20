@@ -1,27 +1,27 @@
-# MASIH SALAH
-# Perceptron Letter Detection
+# Pengenalan Pola Huruf dengan Perceptron & Backpropagation
 
-This project detects trained letters with **perceptron** algorithm. Initial values, input data and test folder are prepared for Laurene Fausett, "Fundamentals Of Neural Networks" pp.71-76 character recognition example 2.14.
+Program ini melakukan training dan testing pola huruf dengan menggunakan algoritma **perceptron** dan **backpropagation**. Data yang digunakan berdasarkan buku dari Laurene Fausett, "Fundamentals Of Neural Networks" pp.71-76 character recognition example 2.14. Referensi: https://github.com/ismaildurmaz/perceptron-letter-detection
 
 ## Requirements:
 Python 3, Tkinter
 
 ## Run:
-python letter_detection.py
+python perceptron.py
+python backpropagation.py
 
 ## User Interface:
 
-![alt screenshot](https://preview.ibb.co/fZHkO0/image.png)
+![alt screenshot](https://ibb.co/R0Lz5mf)
 
 **Load Button**: Training file is loading into view<br/>
 **Save Button**: Saving file is saving to file. (**Attention: Files first character must be target letter**) <br/>
 **Clear Button**: Clears the view<br/>
 **Learning Rate**: Perceptron learnign rate value. It must be 0 < LR < 1<br/>
 **Threshold**: Perceptron threshold value<br/>
-**Max. Iterations**: Perceptron maximum iterations value<br/>
+**Iterasi Maksimum**: Perceptron maximum iterations value<br/>
 **Train Button**: Training folder (data folder)<br/>
-**Weight & Bias Button**: Show weights and bias values<br/>
+
 **Grid**: Mouse click swaps on/off neurons<br/>
 **Test Button**: Testing current view<br/>
 **Result**: Current testing view result<br/>
-**Test Folder Button**: Test folder view
+
