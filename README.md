@@ -7,7 +7,6 @@ Python 3, Tkinter
 
 ## Run:
 python perceptron.py
-python backpropagation.py
 
 ## User Interface:
 
