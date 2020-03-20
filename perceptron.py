@@ -111,6 +111,9 @@ def train_folder():
 
 def test(input):
     found = []
+    y_vec = []
+    bias_final = []
+    weight_final = []
 
     # ----------Step 0----------
     input[input == 0] = -1  # ubah input vector ke bipolar
@@ -118,6 +121,8 @@ def test(input):
     # ----------Step 1----------
     for letter, weight in weights.items():      # Beban didapat dari algoritma training
         y_in = bias[letter]
+        bias_final = bias[letter]
+        weight_final = weight
 
         # ----------Step 2----------
         for s, w in zip(input, weight):         # Input units (Xi)
@@ -126,23 +131,13 @@ def test(input):
             y_in += s * w                       # hitung nila dari y_in = sum(Xi*Wi)
         if y_in > threshold:                    # jika y_in lebih besar dari theta
             found.append(letter)
-    return found
+            y_vec.append(1)
+        elif y_in < -threshold:                 # jika y_in lebih kecil dari min theta
+            y_vec.append(-1)
+        else:                                   # selain dari yang di atas
+            y_vec.append(0)
+    return (found, y_vec, bias_final, weight_final)
 
-# ----------Implementasi fungsi test terhadap file dari folder test----------
-
-def test_folder():
-    text = '';
-    # sesuaikan dengan data testing
-    dir_path = os.getcwd() + '\\test\\'
-    for file in os.listdir(dir_path):
-        if file.endswith('.txt'):   # hanya menerima input dengan format .txt
-            ch = file[0].upper()
-            states = open_file(dir_path + file)
-            found = test(states.copy().reshape(input_size))
-            text += '%s = %s\n' %(file[:-4], ', '.join(found))
-    print(text)
-    return text
-            
 # ----------Design GUI----------
 
 # Inisialisasi root, frame, dan toolbar
@@ -193,6 +188,8 @@ Button(toolbar, text="Save", command = save_callback).pack(side=LEFT)
 def clear_callback():
     np.ndarray.fill(states, 0)
     print_grid()
+    test_result_field_value.set('')
+    y_result_field_value.set(0)
 Button(toolbar, text="Clear", command = clear_callback).pack(side=LEFT)
     
 # Entry untuk Learning Rate
@@ -217,7 +214,7 @@ def train_callback():
     LR = float(learning_rate_field.get())
     max_iterations = int(max_iterations_field.get())
     epoch = train_folder()
-    messagebox.showinfo('Hasil Training', 'Training selesai dengan %d iterasi'%(epoch))
+    messagebox.showinfo('Hasil Training', 'Training selesai dengan %d iterasi' % epoch)
 Button(toolbar, text="Train", command = train_callback).pack(side=LEFT)
 
 # Canvas Grid (kotak kosong)
@@ -246,9 +243,14 @@ bottom_bar.pack(fill=X)
 # Tombol Test
 def test_callback():
     input = states.copy().reshape(input_size)
-    found = test(input)
+    (found, y_vec, bias_final, weight_final) = test(input)
     if len(found) > 0:
         test_result_field_value.set(', '.join(found))
+        y_result_field_value.set(y_vec)
+        print("Bias yang digunakan: %s" % bias_final)
+        print("Beban yang digunakan: ")
+        print(np.matrix(weight_final))
+        print("\n")
     else:
         test_result_field_value.set('???')
 Button(bottom_bar, text="Test", command = test_callback).pack(side=LEFT)
@@ -260,7 +262,7 @@ test_result_field = Entry(bottom_bar, width=20, textvariable=test_result_field_v
 test_result_field.pack(side=LEFT, padx = 10)
 
 # Entry dari nilai y
-Label(bottom_bar, text='Nilai y', background='white').pack(side=LEFT, padx = 10)
+Label(bottom_bar, text='Kode Target (A, B, C, D, E, J, K)', background='white').pack(side=LEFT, padx = 10)
 y_result_field_value = IntVar()
 y_result_field = Entry(bottom_bar, width=20, textvariable=y_result_field_value)
 y_result_field.pack(side=LEFT, padx = 10)
