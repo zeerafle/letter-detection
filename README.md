@@ -1,6 +1,6 @@
-# Pengenalan Pola Huruf dengan Perceptron & Backpropagation
+# Pengenalan Pola Huruf dengan Perceptron
 
-Program ini melakukan training dan testing pola huruf dengan menggunakan algoritma **perceptron** dan **backpropagation**. Data yang digunakan berdasarkan buku dari Laurene Fausett, "Fundamentals Of Neural Networks" pp.71-76 character recognition example 2.14. Referensi: https://github.com/ismaildurmaz/perceptron-letter-detection
+Program ini melakukan training dan testing pola huruf dengan menggunakan algoritma **perceptron**. Data yang digunakan berdasarkan buku dari Laurene Fausett, "Fundamentals Of Neural Networks" pp.71-76 character recognition example 2.14. Referensi: https://github.com/ismaildurmaz/perceptron-letter-detection
 
 ## Requirements:
 Python 3, Tkinter
