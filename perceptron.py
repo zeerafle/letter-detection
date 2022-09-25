@@ -22,7 +22,7 @@ bias = {}
 # Inisialisasi Threshold (teta) = 0, Learning Rate = 1, dan iterasi maksimum = 1000
 threshold = 0
 LR = 1
-max_iterations = 10000
+max_iterations = 100
 
 # ----------Fungsi untuk Transformasi File menjadi Biner (0 & 1)----------
 
@@ -74,11 +74,12 @@ def train(input):
                         y = 0                   # jika y_in diantara minus theta dan theta
 
                     # ----------Step 5----------
+                    # ubah error ke t
                     if y != t:                  # Updating nilai dari beban dan bias jika terdapat error
-                        error = t - y
-                        bias[letter] = bias[letter] + LR * error
+                        # error = t - y
+                        bias[letter] = bias[letter] + LR * t
                         for i in range(input_size):
-                            weights[letter][i] = weights[letter][i] + LR * sample[i] * error
+                            weights[letter][i] = weights[letter][i] + LR * sample[i] * t
                         trained = False
 
         # ----------Step 6----------
@@ -98,6 +99,10 @@ def train_folder():
     for file in os.listdir(dir_path):
         if file.endswith('.txt'):   # hanya menerima input dengan format .txt
             ch = file[0].upper()
+            if ch == 'A':
+                ch = "1"
+            else:
+                ch = "-1"
             if not ch in data:
                 data[ch] = []
             matrix = open_file(dir_path + file) # Ubah file kedalam bentuk matriks
@@ -161,7 +166,7 @@ y_cordinate = int((screen_height/2) - (window_height/2))
 root.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
 
 # Judul GUI
-path = "judul-perceptron.png"
+path = "Pengenalan pola huruf a perceptron.png"
 img = PhotoImage(file=path)
 label = Label(frame, image=img, background='white').pack(side=TOP)
 
@@ -193,14 +198,14 @@ def clear_callback():
 Button(toolbar, text="Clear", command = clear_callback).pack(side=LEFT)
     
 # Entry untuk Learning Rate
-Label(toolbar, text='Learning Rate', background='white').pack(side=LEFT, padx = 10)
-learning_rate_field = Entry(toolbar, textvariable=StringVar(root, value=LR), width=8)
-learning_rate_field.pack(side=LEFT)
+# Label(toolbar, text='Learning Rate', background='white').pack(side=LEFT, padx = 10)
+# learning_rate_field = Entry(toolbar, textvariable=StringVar(root, value=LR), width=8)
+# learning_rate_field.pack(side=LEFT)
 
 # Entry untuk Threshold
-Label(toolbar, text='Threshold', background='white').pack(side=LEFT, padx = 10)
-threshold_field = Entry(toolbar, textvariable=StringVar(root, value=threshold), width=8)
-threshold_field.pack(side=LEFT)
+# # Label(toolbar, text='Threshold', background='white').pack(side=LEFT, padx = 10)
+# threshold_field = Entry(toolbar, textvariable=StringVar(root, value=threshold), width=8)
+# threshold_field.pack(side=LEFT)
 
 # Entry untuk angka maksimum dari iterasi
 Label(toolbar, text='Iterasi Maksimum', background='white').pack(side=LEFT, padx = 10)
@@ -210,8 +215,10 @@ max_iterations_field.pack(side=LEFT)
 # Tombol Train
 def train_callback():
     global weights, bias, threshold, LR, max_iterations
-    threshold = float(threshold_field.get())
-    LR = float(learning_rate_field.get())
+    threshold = 0
+    LR = 1
+    # threshold = float(threshold_field.get())
+    # LR = float(learning_rate_field.get())
     max_iterations = int(max_iterations_field.get())
     epoch = train_folder()
     messagebox.showinfo('Hasil Training', 'Training selesai dengan %d iterasi' % epoch)
@@ -262,9 +269,9 @@ test_result_field = Entry(bottom_bar, width=20, textvariable=test_result_field_v
 test_result_field.pack(side=LEFT, padx = 10)
 
 # Entry dari nilai y
-Label(bottom_bar, text='Kode Target (A, B, C, D, E, J, K)', background='white').pack(side=LEFT, padx = 10)
+Label(bottom_bar, text='Kode Target (A dan Bukan A)', background='white').pack(side=LEFT, padx = 10)
 y_result_field_value = IntVar()
-y_result_field = Entry(bottom_bar, width=20, textvariable=y_result_field_value)
-y_result_field.pack(side=LEFT, padx = 10)
+# y_result_field = Entry(bottom_bar, width=20, textvariable=y_result_field_value)
+# y_result_field.pack(side=LEFT, padx = 10)
 
 root.mainloop()
